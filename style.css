@@ -83,5 +83,25 @@ body {
     margin-bottom: 10px;
     cursor: pointer;
     text-align: center;
+  }  
+  /* iframe responsive */
+.iframe-container {
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+  .iframe-container {
+    height: 90vh;
   }
+}
 }
