@@ -2,16 +2,30 @@
 async function loadSurah() {
   let id = document.getElementById("surahSelect").value;
 
-  let res = await fetch(`https://api.alquran.cloud/v1/surah/${id}`);
-  let data = await res.json();
+  // الآيات
+  let res1 = await fetch(`https://api.alquran.cloud/v1/surah/${id}`);
+  let data1 = await res1.json();
 
-  let text = data.data.ayahs.map(a => a.text).join("<br>");
+  // التفسير (السعدي)
+  let res2 = await fetch(`https://api.alquran.cloud/v1/surah/${id}/ar.muyassar`);
+  let data2 = await res2.json();
 
-  document.getElementById("quranText").innerHTML = text;
+  let ayat = data1.data.ayahs;
+  let tafsir = data2.data.ayahs;
 
-  // صوت السورة (Mishary)
-  document.getElementById("audioPlayer").src =
-    `https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/${id.padStart(3,'0')}.mp3`;
+  let html = ayat.map((a, i) => `
+    <div class="ayah">
+      <p>${a.text}</p>
+
+      <button onclick="playAyah('${a.audio}')">▶️</button>
+
+      <div class="tafsir">
+        📖 ${tafsir[i].text}
+      </div>
+    </div>
+  `).join("");
+
+  document.getElementById("quranText").innerHTML = html;
 }
 
 // أوقات الصلاة
