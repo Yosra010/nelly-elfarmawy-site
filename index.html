@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>مصحف وصدقة جارية</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>صدقة جارية على روح نيللي الفرماوي 🤍</h1>
+
+  <!-- MENU -->
+  <nav class="menu">
+    <a href="#quran">القرآن</a>
+    <a href="#search">البحث</a>
+    <a href="#audio">التلاوة</a>
+    <a href="#prayer">الصلاة</a>
+    <a href="#azkar">الأذكار</a>
+    <a href="#dua">الدعاء</a>
+  </nav>
+</header>
+
+<!-- QURAN SECTION -->
+<section id="quran">
+  <h2>📖 المصحف الشريف</h2>
+
+  <select id="surahSelect" onchange="loadSurah()">
+    <option value="1">الفاتحة</option>
+    <option value="2">البقرة</option>
+    <option value="3">آل عمران</option>
+    <option value="18">الكهف</option>
+    <option value="36">يس</option>
+  </select>
+
+  <iframe 
+    id="quranFrame"
+    src="https://quran.com/1"
+    width="100%"
+    height="500"
+    style="border:none;border-radius:10px;">
+  </iframe>
+</section>
+
+<!-- SEARCH -->
+<section id="search">
+  <h2>🔎 البحث في القرآن</h2>
+
+  <input type="text" id="searchBox" placeholder="ابحث عن كلمة...">
+  <button onclick="searchQuran()">بحث</button>
+
+  <p id="searchResult"></p>
+</section>
+
+<!-- AUDIO -->
+<section id="audio">
+  <h2>🎧 التلاوة</h2>
+
+  <audio controls>
+    <source src="https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/001.mp3" type="audio/mp3">
+  </audio>
+</section>
+
+<!-- PRAYER -->
+<section id="prayer">
+  <h2>🕌 أوقات الصلاة</h2>
+  <p id="prayerTimes">جاري التحميل...</p>
+</section>
+
+<!-- AZKAR LINK -->
+<section id="azkar">
+  <h2>📿 الأذكار</h2>
+  <a href="azkar.html">اذهب للأذكار</a>
+</section>
+
+<!-- DUA -->
+<section id="dua">
+  <h2>🤲 الدعاء</h2>
+  <a href="dua.html">اذهب للدعاء</a>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

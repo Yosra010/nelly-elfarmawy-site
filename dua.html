@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>الدعاء</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="menu">
+  <a href="index.html">🏠 الرئيسية</a>
+  <a href="azkar.html">📿 الأذكار</a>
+  <a href="dua.html">🤲 الدعاء</a>
+</nav>
+
+<h1>🤲 الدعاء</h1>
+
+<div class="dua" onclick="add()">
+  اللهم ارحم نيللي الفرماوي واغفر لها واجعل قبرها نورًا
+</div>
+
+<h2>عدد الدعوات: <span id="count">0</span></h2>
+
+<script>
+let x = 0;
+function add(){
+  x++;
+  document.getElementById("count").innerText = x;
+}
+</script>
+
+</body>
+</html>
