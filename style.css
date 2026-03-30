@@ -90,6 +90,10 @@ body {
   overflow: hidden;
   border-radius: 10px;
 }
+  .iframe-container iframe {
+  transform: scale(1.2);
+  transform-origin: top center;
+}
 
 .iframe-container iframe {
   width: 100%;
