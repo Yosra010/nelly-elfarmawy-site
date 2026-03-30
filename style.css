@@ -3,9 +3,8 @@ body {
   background: #0f172a;
   color: white;
   margin: 0;
-  padding: 20px;
+  padding: 0;
 }
-
 .menu {
   display: flex;
   gap: 15px;
