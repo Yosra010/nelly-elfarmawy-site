@@ -1,56 +1,42 @@
-body {
-  font-family: Arial;
-  background: #0f172a;
-  color: white;
-  margin: 0;
-  padding: 0;
-}
-.menu {
-  display: flex;
-  gap: 15px;
-  background: #111827;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-.menu a {
-  color: white;
-  text-decoration: none;
-}
-
-section {
-  background: #1e293b;
-  padding: 15px;
-  margin-top: 15px;
-  border-radius: 10px;
-}
-
-button {
-  padding: 8px 15px;
-  cursor: pointer;
-} 
-/* --- إعدادات عامة لتحسين العرض --- */
+/* --- إعدادات عامة --- */
 * {
-  box-sizing: border-box; /* لضمان عدم خروج العناصر عن حدود الشاشة */
+  box-sizing: border-box;
 }
 
 body {
   line-height: 1.6;
   max-width: 100%;
-  overflow-x: hidden; /* لمنع التمرير الأفقي المزعج في الموبايل */
+  overflow-x: hidden;
 }
 
-/* --- تحويل المنيو لشكل عمودي في الموبايل --- */
-@media screen and (max-width: 600px) {
+/* iframe container */
+.iframe-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  transform: scale(1.2);
+  transform-origin: top center;
+}
+
+/* --- موبايل --- */
+@media screen and (max-width: 768px) {
+
   .menu {
-    flex-direction: column; /* ترتيب الروابط تحت بعض */
+    flex-direction: column;
     align-items: center;
     gap: 10px;
     padding: 15px;
   }
 
   .menu a {
-    background: #334155; /* إضافة خلفية بسيطة للأزرار */
+    background: #334155;
     width: 100%;
     text-align: center;
     padding: 10px;
@@ -59,7 +45,7 @@ body {
   }
 
   h1 {
-    font-size: 1.5rem; /* تصغير العناوين لتناسب الشاشة */
+    font-size: 1.5rem;
     text-align: center;
   }
 
@@ -68,43 +54,24 @@ body {
     margin-top: 10px;
   }
 
-  /* جعل الفيديو والمصحف يملأ الشاشة بالعرض */
   iframe {
-    height: 300px; /* تقليل الارتفاع في الموبايل لسهولة التصفح */
+    height: 300px;
   }
 
-  /* تحسين شكل الأذكار والدعاء */
+  .iframe-container {
+    height: 100vh;
+  }
+
+  .iframe-container iframe {
+    transform: scale(1.4);
+  }
+
   p, .dua {
     font-size: 1.1rem;
     padding: 15px;
     background: #334155;
     border-radius: 10px;
     margin-bottom: 10px;
-    cursor: pointer;
     text-align: center;
-  }  
-  /* iframe responsive */
-.iframe-container {
-  width: 100%;
-  height: 80vh;
-  overflow: hidden;
-  border-radius: 10px;
-}
-  .iframe-container iframe {
-  transform: scale(1.2);
-  transform-origin: top center;
-}
-
-.iframe-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* موبايل */
-@media (max-width: 768px) {
-  .iframe-container {
-    height: 90vh;
   }
-}
 }
